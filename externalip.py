@@ -1,14 +1,13 @@
-# Version 1 ~ TehProject26
+#!/usr/bin/env python3
+# encoding: utf-8
 
 import requests
 
-# Vists The 'url' Can Captures The Data
-url = 'http://myexternalip.com/raw'
-req = requests.get(url)
-Cip = req.text
+def get_ip():
+	return requests.get('https://ifconfig.co/ip').text
 
-# Prints The IP & '\033[1m' = To Bold White Font
-print("\n")
-print('\033[1m' + Cip)
-print("\n")
+if __name__ == '__main__':	
+	# Prints The IP & '\033[1m' = To Bold White Font
+	print('\n')
+	print('\033[1m' + get_ip())
 
