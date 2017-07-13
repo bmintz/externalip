@@ -1,14 +1,13 @@
-# Version 1 ~ TehProject26
+#!/usr/bin/env python
+
+from __future__ import print_function
 
 import requests
 
-# Vists The 'url' Can Captures The Data
-url = 'http://myexternalip.com/raw'
-req = requests.get(url)
-Cip = req.text
+ip = requests.get('https://ifconfig.co/ip').text
 
-# Prints The IP & '\033[1m' = To Bold White Font
-print("\n")
-print('\033[1m' + Cip)
-print("\n")
+# Prints The IP in bold white font
+print()
+print('\033[1m' + ip)
+print()
 
